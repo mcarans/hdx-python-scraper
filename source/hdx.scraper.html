@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hdx.scraper package &#8212; HDX Python Scraper 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="hdx package" href="hdx.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="hdx-scraper-package">
+<h1>hdx.scraper package<a class="headerlink" href="#hdx-scraper-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hdx.scraper.exceloutput">
+<span id="hdx-scraper-exceloutput-module"></span><h2>hdx.scraper.exceloutput module<a class="headerlink" href="#module-hdx.scraper.exceloutput" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="hdx.scraper.exceloutput.ExcelOutput">
+<em class="property">class </em><code class="sig-prename descclassname">hdx.scraper.exceloutput.</code><code class="sig-name descname">ExcelOutput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">excel_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">tabs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">updatetabs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.scraper.exceloutput.ExcelOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ExcelOutput class enabling writing to Excel spreadsheets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>excel_path</strong> (<em>str</em>) – Path to output spreadsheet</p></li>
+<li><p><strong>tabs</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Dictionary of mappings from internal name to spreadsheet tab name</p></li>
+<li><p><strong>updatetabs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Tabs to update</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="hdx.scraper.exceloutput.ExcelOutput.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.exceloutput.ExcelOutput.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save spreadsheet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.exceloutput.ExcelOutput.update_tab">
+<code class="sig-name descname">update_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tabname</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>List<span class="p">, </span>pandas.core.frame.DataFrame<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.exceloutput.ExcelOutput.update_tab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update tab with values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tabname</strong> (<em>str</em>) – Tab to update</p></li>
+<li><p><strong>values</strong> (<em>Union</em><em>[</em><em>List</em><em>, </em><em>DataFrame</em><em>]</em>) – Either values in a list of dicts or a DataFrame</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx.scraper.googlesheets">
+<span id="hdx-scraper-googlesheets-module"></span><h2>hdx.scraper.googlesheets module<a class="headerlink" href="#module-hdx.scraper.googlesheets" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="hdx.scraper.googlesheets.GoogleSheets">
+<em class="property">class </em><code class="sig-prename descclassname">hdx.scraper.googlesheets.</code><code class="sig-name descname">GoogleSheets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">configuration</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">gsheet_auth</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">updatesheets</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">tabs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">updatetabs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.scraper.googlesheets.GoogleSheets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GoogleSheets class enabling writing to Google spreadsheets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>configuration</strong> (<em>Dict</em>) – Configuration for Google Sheets</p></li>
+<li><p><strong>gsheet_auth</strong> (<em>str</em>) – Authorisation for Google Sheets/Drive</p></li>
+<li><p><strong>updatesheets</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of spreadsheets to update (eg. prod, test)</p></li>
+<li><p><strong>tabs</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Dictionary of mappings from internal name to spreadsheet tab name</p></li>
+<li><p><strong>updatetabs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Tabs to update</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="hdx.scraper.googlesheets.GoogleSheets.update_tab">
+<code class="sig-name descname">update_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tabname</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>List<span class="p">, </span>pandas.core.frame.DataFrame<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.googlesheets.GoogleSheets.update_tab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update tab with values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tabname</strong> (<em>str</em>) – Tab to update</p></li>
+<li><p><strong>values</strong> (<em>Union</em><em>[</em><em>List</em><em>, </em><em>DataFrame</em><em>]</em>) – Either values in a list of dicts or a DataFrame</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+<li><p><strong>limit</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Maximum number of rows to output</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx.scraper.jsonoutput">
+<span id="hdx-scraper-jsonoutput-module"></span><h2>hdx.scraper.jsonoutput module<a class="headerlink" href="#module-hdx.scraper.jsonoutput" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="hdx.scraper.jsonoutput.JsonOutput">
+<em class="property">class </em><code class="sig-prename descclassname">hdx.scraper.jsonoutput.</code><code class="sig-name descname">JsonOutput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">configuration</span></em>, <em class="sig-param"><span class="n">updatetabs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>JsonOutput class enabling writing to JSON files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>configuration</strong> (<em>Dict</em>) – Configuration for Google Sheets</p></li>
+<li><p><strong>updatetabs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Tabs to update</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="hdx.scraper.jsonoutput.JsonOutput.add_additional_json">
+<code class="sig-name descname">add_additional_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">downloader</span><span class="p">:</span> <span class="n">hdx.utilities.downloader.Download</span></em>, <em class="sig-param"><span class="n">today</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput.add_additional_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download JSON files and add them under keys defined in the configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>downloader</strong> (<em>Download</em>) – Download object for downloading JSON</p></li>
+<li><p><strong>today</strong> (<em>Optional</em><em>[</em><em>datetime</em><em>]</em>) – Value to use for today. Defaults to None (datetime.now()).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.jsonoutput.JsonOutput.add_data_row">
+<code class="sig-name descname">add_data_row</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">row</span><span class="p">:</span> <span class="n">Dict</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput.add_data_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add row to JSON under a key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key in JSON to update</p></li>
+<li><p><strong>rows</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – List of dictionaries</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.jsonoutput.JsonOutput.add_data_rows_by_key">
+<code class="sig-name descname">add_data_rows_by_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">countryiso</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">rows</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Dict<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput.add_data_rows_by_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add rows under both a key and an ISO 3 country code subkey</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key in JSON to update</p></li>
+<li><p><strong>countryiso</strong> (<em>str</em>) – Country to use as subkey</p></li>
+<li><p><strong>rows</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – List of dictionaries</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.jsonoutput.JsonOutput.add_dataframe_rows">
+<code class="sig-name descname">add_dataframe_rows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput.add_dataframe_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add rows from dataframe under a key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key in JSON to update</p></li>
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Dataframe containing rows</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.jsonoutput.JsonOutput.generate_json_from_df">
+<code class="sig-name descname">generate_json_from_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput.generate_json_from_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate JSON from key and dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key in JSON to update</p></li>
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Dataframe containing rows</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.jsonoutput.JsonOutput.generate_json_from_list">
+<code class="sig-name descname">generate_json_from_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">rows</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Dict<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput.generate_json_from_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate JSON from key and rows list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key in JSON to update</p></li>
+<li><p><strong>rows</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – List of dictionaries</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.jsonoutput.JsonOutput.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folder</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save JSON file and any addition subsets of that JSON defined in the additional configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>folder</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Key in JSON to update</p></li>
+<li><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of file paths</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.jsonoutput.JsonOutput.update_tab">
+<code class="sig-name descname">update_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tabname</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>List<span class="p">, </span>pandas.core.frame.DataFrame<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.jsonoutput.JsonOutput.update_tab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update tab with values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tabname</strong> (<em>str</em>) – Tab to update</p></li>
+<li><p><strong>values</strong> (<em>Union</em><em>[</em><em>List</em><em>, </em><em>DataFrame</em><em>]</em>) – Either values in a list of dicts or a DataFrame</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx.scraper.nooutput">
+<span id="hdx-scraper-nooutput-module"></span><h2>hdx.scraper.nooutput module<a class="headerlink" href="#module-hdx.scraper.nooutput" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="hdx.scraper.nooutput.NoOutput">
+<em class="property">class </em><code class="sig-prename descclassname">hdx.scraper.nooutput.</code><code class="sig-name descname">NoOutput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">updatetabs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.scraper.nooutput.NoOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>NoOutput class for testing that mimics the format of other output classes but does nothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>updatetabs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Tabs to update</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="hdx.scraper.nooutput.NoOutput.add_additional_json">
+<code class="sig-name descname">add_additional_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">downloader</span><span class="p">:</span> <span class="n">hdx.utilities.downloader.Download</span></em>, <em class="sig-param"><span class="n">today</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.nooutput.NoOutput.add_additional_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download files and add them under keys defined in the configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>downloader</strong> (<em>Download</em>) – Download object for downloading</p></li>
+<li><p><strong>today</strong> (<em>Optional</em><em>[</em><em>datetime</em><em>]</em>) – Value to use for today. Defaults to None (datetime.now()).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.nooutput.NoOutput.add_data_row">
+<code class="sig-name descname">add_data_row</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">row</span><span class="p">:</span> <span class="n">Dict</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.nooutput.NoOutput.add_data_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add row</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key to update</p></li>
+<li><p><strong>rows</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – List of dictionaries</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.nooutput.NoOutput.add_data_rows_by_key">
+<code class="sig-name descname">add_data_rows_by_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">countryiso</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">rows</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Dict<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.nooutput.NoOutput.add_data_rows_by_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add rows under both a key and an ISO 3 country code subkey</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key to update</p></li>
+<li><p><strong>countryiso</strong> (<em>str</em>) – Country to use as subkey</p></li>
+<li><p><strong>rows</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – List of dictionaries</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.nooutput.NoOutput.add_dataframe_rows">
+<code class="sig-name descname">add_dataframe_rows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.nooutput.NoOutput.add_dataframe_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add rows from dataframe under a key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key in JSON to update</p></li>
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Dataframe containing rows</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.nooutput.NoOutput.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.nooutput.NoOutput.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.nooutput.NoOutput.update_tab">
+<code class="sig-name descname">update_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tabname</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>List<span class="p">, </span>pandas.core.frame.DataFrame<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">hxltags</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.nooutput.NoOutput.update_tab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update tab with values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tabname</strong> (<em>str</em>) – Tab to update</p></li>
+<li><p><strong>values</strong> (<em>Union</em><em>[</em><em>List</em><em>, </em><em>DataFrame</em><em>]</em>) – Either values in a list of dicts or a DataFrame</p></li>
+<li><p><strong>hxltags</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – HXL tag mapping. Defaults to None.</p></li>
+<li><p><strong>limit</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Maximum number of rows to output</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx.scraper.readers">
+<span id="hdx-scraper-readers-module"></span><h2>hdx.scraper.readers module<a class="headerlink" href="#module-hdx.scraper.readers" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="hdx.scraper.readers.get_url">
+<code class="sig-prename descclassname">hdx.scraper.readers.</code><code class="sig-name descname">get_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#hdx.scraper.readers.get_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get url from a string replacing any template arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – Url to read</p></li>
+<li><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Url with any template arguments replaced</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.readers.read">
+<code class="sig-prename descclassname">hdx.scraper.readers.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">downloader</span><span class="p">:</span> <span class="n">hdx.utilities.downloader.Download</span></em>, <em class="sig-param"><span class="n">datasetinfo</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">today</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>Union<span class="p">[</span>List<span class="p">, </span>Dict<span class="p">]</span><span class="p">]</span><span class="p">]</span><a class="headerlink" href="#hdx.scraper.readers.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data and metadata from HDX dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>downloader</strong> (<em>Download</em>) – Download object for downloading files</p></li>
+<li><p><strong>datasetinfo</strong> (<em>Dict</em>) – Dictionary of information about dataset</p></li>
+<li><p><strong>today</strong> (<em>Optional</em><em>[</em><em>datetime</em><em>]</em>) – Value to use for today. Defaults to None (datetime.now()).</p></li>
+<li><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments in urls</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple (headers, iterator where each row is a list or dictionary)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[List[str],Iterator[Union[List,Dict]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.readers.read_hdx">
+<code class="sig-prename descclassname">hdx.scraper.readers.</code><code class="sig-name descname">read_hdx</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">downloader</span><span class="p">:</span> <span class="n">hdx.utilities.downloader.Download</span></em>, <em class="sig-param"><span class="n">datasetinfo</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">today</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>Union<span class="p">[</span>List<span class="p">, </span>Dict<span class="p">]</span><span class="p">]</span><span class="p">]</span><a class="headerlink" href="#hdx.scraper.readers.read_hdx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data and metadata from HDX dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>downloader</strong> (<em>Download</em>) – Download object for downloading files</p></li>
+<li><p><strong>datasetinfo</strong> (<em>Dict</em>) – Dictionary of information about dataset</p></li>
+<li><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple (headers, iterator where each row is a list or dictionary)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[List[str],Iterator[Union[List,Dict]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.readers.read_hdx_metadata">
+<code class="sig-prename descclassname">hdx.scraper.readers.</code><code class="sig-name descname">read_hdx_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datasetinfo</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">today</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.readers.read_hdx_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read metadata from HDX dataset and add to input dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datasetinfo</strong> (<em>Dict</em>) – Dictionary of information about dataset</p></li>
+<li><p><strong>today</strong> (<em>Optional</em><em>[</em><em>datetime</em><em>]</em>) – Value to use for today. Defaults to None (datetime.now()).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.readers.read_json">
+<code class="sig-prename descclassname">hdx.scraper.readers.</code><code class="sig-name descname">read_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">downloader</span><span class="p">:</span> <span class="n">hdx.utilities.downloader.Download</span></em>, <em class="sig-param"><span class="n">datasetinfo</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>Iterator<span class="p">[</span>Union<span class="p">[</span>List<span class="p">, </span>Dict<span class="p">]</span><span class="p">]</span><span class="p">]</span><a class="headerlink" href="#hdx.scraper.readers.read_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from json source allowing for JSONPath expressions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>downloader</strong> (<em>Download</em>) – Download object for downloading JSON</p></li>
+<li><p><strong>datasetinfo</strong> (<em>Dict</em>) – Dictionary of information about dataset</p></li>
+<li><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Iterator or None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[Iterator[Union[List,Dict]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.readers.read_ole">
+<code class="sig-prename descclassname">hdx.scraper.readers.</code><code class="sig-name descname">read_ole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">downloader</span><span class="p">:</span> <span class="n">hdx.utilities.downloader.Download</span></em>, <em class="sig-param"><span class="n">datasetinfo</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>Union<span class="p">[</span>List<span class="p">, </span>Dict<span class="p">]</span><span class="p">]</span><span class="p">]</span><a class="headerlink" href="#hdx.scraper.readers.read_ole" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from OLE Excel source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>downloader</strong> (<em>Download</em>) – Download object for downloading files</p></li>
+<li><p><strong>datasetinfo</strong> (<em>Dict</em>) – Dictionary of information about dataset</p></li>
+<li><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple (headers, iterator where each row is a list or dictionary)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[List[str],Iterator[Union[List,Dict]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.readers.read_tabular">
+<code class="sig-prename descclassname">hdx.scraper.readers.</code><code class="sig-name descname">read_tabular</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">downloader</span><span class="p">:</span> <span class="n">hdx.utilities.downloader.Download</span></em>, <em class="sig-param"><span class="n">datasetinfo</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>Union<span class="p">[</span>List<span class="p">, </span>Dict<span class="p">]</span><span class="p">]</span><span class="p">]</span><a class="headerlink" href="#hdx.scraper.readers.read_tabular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from tabular source eg. csv, xls, xlsx</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>downloader</strong> (<em>Download</em>) – Download object for downloading files</p></li>
+<li><p><strong>datasetinfo</strong> (<em>Dict</em>) – Dictionary of information about dataset</p></li>
+<li><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple (headers, iterator where each row is a list or dictionary)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[List[str],Iterator[Union[List,Dict]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx.scraper.rowparser">
+<span id="hdx-scraper-rowparser-module"></span><h2>hdx.scraper.rowparser module<a class="headerlink" href="#module-hdx.scraper.rowparser" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="hdx.scraper.rowparser.RowParser">
+<em class="property">class </em><code class="sig-prename descclassname">hdx.scraper.rowparser.</code><code class="sig-name descname">RowParser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">countryiso3s</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">adminone</span><span class="p">:</span> <span class="n">hdx.location.adminone.AdminOne</span></em>, <em class="sig-param"><span class="n">level</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">datasetinfo</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">headers</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">subsets</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Dict<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">maxdateonly</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.scraper.rowparser.RowParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>RowParser class for parsing each row.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>countryiso3s</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of ISO3 country codes to process</p></li>
+<li><p><strong>adminone</strong> (<em>AdminOne</em>) – AdminOne object from HDX Python Country library that handles processing of admin level 1</p></li>
+<li><p><strong>level</strong> (<em>str</em>) – Can be global, national or subnational</p></li>
+<li><p><strong>datasetinfo</strong> (<em>Dict</em>) – Dictionary of information about dataset</p></li>
+<li><p><strong>headers</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Row headers</p></li>
+<li><p><strong>subsets</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – List of subset definitions</p></li>
+<li><p><strong>maxdateonly</strong> (<em>bool</em>) – Whether to only take the most recent date. Defaults to True.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="hdx.scraper.rowparser.RowParser.filtered">
+<code class="sig-name descname">filtered</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span><span class="p">:</span> <span class="n">Dict</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#hdx.scraper.rowparser.RowParser.filtered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the row should be filtered out</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>row</strong> (<em>Dict</em>) – Row to check for filters</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether row is filtered out or not</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.rowparser.RowParser.flatten">
+<code class="sig-name descname">flatten</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span><span class="p">:</span> <span class="n">Dict</span></em><span class="sig-paren">)</span> &#x2192; Generator<span class="p">[</span>Dict<span class="p">]</span><a class="headerlink" href="#hdx.scraper.rowparser.RowParser.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flatten a wide spreadsheet format into a long one</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>row</strong> (<em>Dict</em>) – Row to flatten</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Flattened row(s)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Generator[Dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.rowparser.RowParser.get_maxdate">
+<code class="sig-name descname">get_maxdate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; datetime.datetime<a class="headerlink" href="#hdx.scraper.rowparser.RowParser.get_maxdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the most recent date of the rows so far</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Most recent date in processed rows</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.rowparser.RowParser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">scrapername</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>Optional<span class="p">[</span>str<span class="p">]</span><span class="p">, </span>Optional<span class="p">[</span>List<span class="p">[</span>bool<span class="p">]</span><span class="p">]</span><span class="p">]</span><a class="headerlink" href="#hdx.scraper.rowparser.RowParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse row checking for valid admin information and if the row should be filtered out in each subset given
+its definition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>row</strong> (<em>Dict</em>) – Row to parse</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(admin name, should process subset list) or (None, None)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Optional[str], Optional[List[bool]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hdx.scraper.rowparser.RowParser.read_external_filter">
+<code class="sig-name descname">read_external_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datasetinfo</span><span class="p">:</span> <span class="n">Dict</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">, </span>Iterator<span class="p">[</span>Union<span class="p">[</span>List<span class="p">, </span>Dict<span class="p">]</span><span class="p">]</span><span class="p">]</span><a class="headerlink" href="#hdx.scraper.rowparser.RowParser.read_external_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read filter list from external url poitning to a HXLated file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>datasetinfo</strong> (<em>Dict</em>) – Dictionary of information about dataset</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx.scraper.scrapers">
+<span id="hdx-scraper-scrapers-module"></span><h2>hdx.scraper.scrapers module<a class="headerlink" href="#module-hdx.scraper.scrapers" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="hdx.scraper.scrapers.run_scrapers">
+<code class="sig-prename descclassname">hdx.scraper.scrapers.</code><code class="sig-name descname">run_scrapers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">configuration</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">countryiso3s</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">adminone</span><span class="p">:</span> <span class="n">hdx.location.adminone.AdminOne</span></em>, <em class="sig-param"><span class="n">level</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">maindownloader</span><span class="p">:</span> <span class="n">hdx.utilities.downloader.Download</span></em>, <em class="sig-param"><span class="n">basic_auths</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">today</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scrapers</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">population_lookup</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>List<span class="p">, </span>List<span class="p">, </span>List<span class="p">]</span><a class="headerlink" href="#hdx.scraper.scrapers.run_scrapers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs all mini scrapers given in configuration and returns headers, values and sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>configuration</strong> (<em>Dict</em>) – Configuration for mini scrapers</p></li>
+<li><p><strong>countryiso3s</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of ISO3 country codes to process</p></li>
+<li><p><strong>adminone</strong> (<em>AdminOne</em>) – AdminOne object from HDX Python Country library that handles processing of admin level 1</p></li>
+<li><p><strong>level</strong> (<em>str</em>) – Can be global, national or subnational</p></li>
+<li><p><strong>maindownloader</strong> (<em>Download</em>) – Download object for downloading files</p></li>
+<li><p><strong>basic_auths</strong> (<em>Dict</em><em>[</em><em>str</em><em>,</em><em>str</em><em>]</em>) – Dictionary of basic authentication information</p></li>
+<li><p><strong>today</strong> (<em>Optional</em><em>[</em><em>datetime</em><em>]</em>) – Value to use for today. Defaults to None (datetime.now()).</p></li>
+<li><p><strong>scrapers</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>)</em>) – List of mini scraper names to process</p></li>
+<li><p><strong>population_lookup</strong> (<em>Dict</em><em>[</em><em>str</em><em>,</em><em>int</em><em>]</em>) – Dictionary from admin code to population</p></li>
+<li><p><strong>**kwargs</strong> – Variables to use when evaluating template arguments in urls</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Output headers, values and sources</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[List,List,List]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx.scraper">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hdx.scraper" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="hdx.scraper.add_population">
+<code class="sig-prename descclassname">hdx.scraper.</code><code class="sig-name descname">add_population</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">population_lookup</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">headers</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">columns</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Dict<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#hdx.scraper.add_population" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add population data to dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population_lookup</strong> (<em>Dict</em>) – Population dictionary</p></li>
+<li><p><strong>headers</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of headers</p></li>
+<li><p><strong>columns</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – List of columns</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.get_date_from_dataset_date">
+<code class="sig-prename descclassname">hdx.scraper.</code><code class="sig-name descname">get_date_from_dataset_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>hdx.data.dataset.Dataset<span class="p">, </span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">today</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#hdx.scraper.get_date_from_dataset_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the date or end date of a dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<em>Union</em><em>[</em><em>Dataset</em><em>, </em><em>str</em><em>]</em>) – Dataset object or name or id of dataset</p></li>
+<li><p><strong>today</strong> (<em>datetime</em>) – Date to use for today. Defaults to None (datetime.now())</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value of column or template</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.get_rowval">
+<code class="sig-prename descclassname">hdx.scraper.</code><code class="sig-name descname">get_rowval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">valcol</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#hdx.scraper.get_rowval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of a particular column in a row expanding any template it contains</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>Dict</em>) – Dictionary</p></li>
+<li><p><strong>valcol</strong> (<em>str</em>) – Column which may be a string in which to look for template</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value of column or template</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="hdx.scraper.match_template">
+<code class="sig-prename descclassname">hdx.scraper.</code><code class="sig-name descname">match_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>Optional<span class="p">[</span>str<span class="p">]</span><span class="p">, </span>Optional<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="headerlink" href="#hdx.scraper.match_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to match {{XXX}} in input string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em>) – String in which to look for template</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(Matched string with brackets, matched string without brackets)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Optional[str], Optional[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">HDX Python Scraper</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="hdx.html">hdx package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">hdx.scraper package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="hdx.html">hdx package</a><ul>
+      <li>Previous: <a href="hdx.html" title="previous chapter">hdx package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;Michael Rans.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/hdx.scraper.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
